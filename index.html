@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Customer Form - Zelio eBikes</title>
+    <title>Zelio eBikes - Customer Inquiry</title>
     <style>
         * {
             margin: 0;
@@ -12,265 +12,484 @@
         }
         
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            padding: 40px 20px;
-        }
-        
-        .navbar {
-            background: rgba(255, 255, 255, 0.95);
-            padding: 20px;
-            text-align: center;
-            border-radius: 10px;
-            margin-bottom: 30px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-        }
-        
-        .navbar h1 {
-            color: #667eea;
-            font-size: 32px;
-            margin-bottom: 10px;
-        }
-        
-        .navbar p {
-            color: #666;
-            font-size: 16px;
-        }
-        
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-        }
-        
-        .section {
-            background: white;
-            border-radius: 10px;
-            padding: 30px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-        }
-        
-        .section h2 {
+            font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
             color: #333;
-            margin-bottom: 20px;
-            font-size: 24px;
-            border-bottom: 3px solid #667eea;
-            padding-bottom: 10px;
-        }
-        
-        .form-group {
-            margin-bottom: 20px;
-        }
-        
-        label {
-            display: block;
-            margin-bottom: 8px;
-            color: #555;
-            font-weight: 600;
-            font-size: 14px;
-        }
-        
-        input[type="text"],
-        input[type="email"],
-        input[type="tel"],
-        textarea {
-            width: 100%;
-            padding: 12px;
-            border: 2px solid #ddd;
-            border-radius: 5px;
-            font-size: 14px;
-            font-family: inherit;
-            transition: border-color 0.3s;
-        }
-        
-        input[type="text"]:focus,
-        input[type="email"]:focus,
-        input[type="tel"]:focus,
-        textarea:focus {
-            outline: none;
-            border-color: #667eea;
-            box-shadow: 0 0 5px rgba(102, 126, 234, 0.3);
-        }
-        
-        textarea {
-            resize: vertical;
-            min-height: 100px;
-        }
-        
-        button {
-            width: 100%;
-            padding: 12px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-        
-        button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
-        }
-        
-        button:active {
-            transform: translateY(0);
-        }
-        
-        .message {
-            margin-top: 15px;
-            padding: 12px;
-            border-radius: 5px;
-            text-align: center;
-            display: none;
-            font-weight: 600;
-        }
-        
-        .message.success {
-            background-color: #d4edda;
-            color: #155724;
-            border: 1px solid #c3e6cb;
-            display: block;
-        }
-        
-        .message.error {
-            background-color: #f8d7da;
-            color: #721c24;
-            border: 1px solid #f5c6cb;
-            display: block;
-        }
-        
-        .google-form-section {
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .google-form-section iframe {
-            border-radius: 5px;
-            border: none;
-            flex: 1;
-            min-height: 600px;
-        }
-        
-        .info-box {
-            background: #f0f4ff;
-            padding: 15px;
-            border-radius: 5px;
-            margin-bottom: 20px;
-            border-left: 4px solid #667eea;
-        }
-        
-        .info-box p {
-            color: #555;
-            font-size: 14px;
             line-height: 1.6;
         }
         
+        /* Navigation Bar */
+        nav {
+            background: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: #22c55e;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo:before {
+            content: "🚲";
+            font-size: 32px;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #666;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #22c55e;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1a4d2e 0%, #2d7a3e 100%);
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: #22c55e;
+            color: white;
+            padding: 14px 40px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s, transform 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        .cta-button:hover {
+            background: #16a34a;
+            transform: translateY(-2px);
+        }
+        
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Features Section */
+        .features {
+            padding: 80px 20px;
+            background: #f9fafb;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 50px;
+            color: #1a1a1a;
+            font-weight: 700;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .feature-card {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+        }
+        
+        .feature-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        
+        .feature-card h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: #22c55e;
+        }
+        
+        .feature-card p {
+            color: #666;
+            line-height: 1.8;
+        }
+        
+        /* Contact Section */
+        .contact-section {
+            padding: 80px 20px;
+            background: white;
+        }
+        
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+        
+        .contact-info h2 {
+            font-size: 32px;
+            margin-bottom: 30px;
+            color: #1a1a1a;
+            font-weight: 700;
+        }
+        
+        .info-item {
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        .info-item:last-child {
+            border-bottom: none;
+        }
+        
+        .info-item h4 {
+            color: #22c55e;
+            margin-bottom: 10px;
+            font-size: 16px;
+            font-weight: 600;
+        }
+        
+        .info-item p {
+            color: #666;
+            font-size: 15px;
+            line-height: 1.8;
+        }
+        
+        .info-item a {
+            color: #22c55e;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .info-item a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Google Form Embed */
+        .form-container {
+            background: #f9fafb;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+        
+        .form-container h3 {
+            margin-bottom: 20px;
+            color: #1a1a1a;
+            font-size: 20px;
+        }
+        
+        .form-container iframe {
+            width: 100%;
+            height: 700px;
+            border: none;
+            border-radius: 5px;
+        }
+        
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 50px 20px;
+            margin-top: 60px;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-section h4 {
+            color: #22c55e;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+        
+        .footer-section a:hover {
+            color: #22c55e;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid #333;
+            padding-top: 20px;
+            text-align: center;
+            color: #999;
+            font-size: 14px;
+        }
+        
+        /* Responsive Design */
         @media (max-width: 768px) {
-            .container {
+            .nav-links {
+                gap: 20px;
+                font-size: 14px;
+            }
+            
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            .hero p {
+                font-size: 16px;
+            }
+            
+            .contact-wrapper {
                 grid-template-columns: 1fr;
+                gap: 40px;
             }
             
-            .navbar h1 {
-                font-size: 24px;
+            .form-container iframe {
+                height: 600px;
             }
             
-            .section {
-                padding: 20px;
-            }
-            
-            .google-form-section iframe {
-                min-height: 800px;
+            .section-title {
+                font-size: 28px;
             }
         }
         
-        .footer {
-            text-align: center;
-            color: white;
-            margin-top: 40px;
-            font-size: 14px;
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
+        
+        .feature-card {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+        
+        .feature-card:nth-child(1) { animation-delay: 0.1s; }
+        .feature-card:nth-child(2) { animation-delay: 0.2s; }
+        .feature-card:nth-child(3) { animation-delay: 0.3s; }
     </style>
 </head>
 <body>
-    <div class="navbar">
-        <h1>🚲 Zelio eBikes</h1>
-        <p>Customer Inquiry Form</p>
-    </div>
-    
-    <div class="container">
-        <!-- Left Section: Custom Form -->
-        <div class="section">
-            <h2>Quick Contact Form</h2>
-            
-            <div class="info-box">
-                <p>📋 Fill out the quick form below or use the Google Form on the right</p>
-            </div>
-            
-            <form id="contactForm">
-                <div class="form-group">
-                    <label for="name">Name *</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="email">Email *</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="phone">Phone</label>
-                    <input type="tel" id="phone" name="phone">
-                </div>
-                
-                <div class="form-group">
-                    <label for="message">Message *</label>
-                    <textarea id="message" name="message" required placeholder="Tell us about your inquiry..."></textarea>
-                </div>
-                
-                <button type="submit">Submit</button>
-                
-                <div class="message" id="message"></div>
-            </form>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">Zelio eBikes</a>
+            <ul class="nav-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
         </div>
-        
-        <!-- Right Section: Google Form Embed -->
-        <div class="section google-form-section">
-            <h2>Google Form</h2>
-            
-            <div class="info-box">
-                <p>📝 Or fill the embedded form below (recommended for direct spreadsheet sync)</p>
-            </div>
-            
-            <!-- REPLACE THIS WITH YOUR GOOGLE FORM EMBED CODE -->
-            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdinRtFGgrChxHrUhwGDPgfST0bGNi7zOCqVgA66nsb3XvfkQ/viewform?usp=header" width="100%" height="600" frameborder="0" marginheight="0" marginwidth="0">Loading Google Form...</iframe>
-            <!-- END REPLACEMENT -->
+    </nav>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome to Zelio eBikes</h1>
+            <p>Experience sustainable and innovative electric mobility solutions. Join thousands of satisfied customers across India.</p>
+            <a href="#contact" class="cta-button">Get In Touch</a>
         </div>
-    </div>
+    </section>
     
-    <div class="footer">
-        <p>© 2026 Zelio eBikes. All customer data is securely stored in Google Sheets.</p>
-    </div>
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <h2 class="section-title">Why Choose Zelio?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Advanced Technology</h3>
+                    <p>Cutting-edge battery and motor technology for optimal performance and efficiency.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌍</div>
+                    <h3>Eco-Friendly</h3>
+                    <p>Zero emissions and sustainable transportation for a cleaner environment.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔧</div>
+                    <h3>After-Sales Support</h3>
+                    <p>Comprehensive warranty and service network across India with expert technicians.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h3>Affordable Pricing</h3>
+                    <p>Competitive prices with flexible payment options for all customers.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🏆</div>
+                    <h3>Award Winning</h3>
+                    <p>Recognized for innovation and quality in the electric mobility industry.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📍</div>
+                    <h3>Wide Network</h3>
+                    <p>Dealerships and service centers available across major cities in India.</p>
+                </div>
+            </div>
+        </div>
+    </section>
     
-    <script>
-        document.getElementById('contactForm').addEventListener('submit', async (e) => {
-            e.preventDefault();
-            
-            const msgDiv = document.getElementById('message');
-            msgDiv.textContent = '✓ Thank you! Your entry has been received.';
-            msgDiv.className = 'message success';
-            
-            document.getElementById('contactForm').reset();
-            
-            setTimeout(() => {
-                msgDiv.style.display = 'none';
-            }, 5000);
-        });
-    </script>
+    <!-- Contact Section with Google Form -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <h2 class="section-title">Get in Touch</h2>
+            <div class="contact-wrapper">
+                <!-- Left: Contact Information -->
+                <div class="contact-info">
+                    <h2>We'd Love to Hear From You</h2>
+                    
+                    <div class="info-item">
+                        <h4>📞 Phone</h4>
+                        <p>+91-XXXX-XXXX-XXX</p>
+                    </div>
+                    
+                    <div class="info-item">
+                        <h4>📧 Email</h4>
+                        <p><a href="mailto:info@zelioebikes.com">info@zelioebikes.com</a></p>
+                    </div>
+                    
+                    <div class="info-item">
+                        <h4>🏢 Headquarters</h4>
+                        <p>Zelio eBikes Pvt. Ltd.<br>
+                        India</p>
+                    </div>
+                    
+                    <div class="info-item">
+                        <h4>⏰ Business Hours</h4>
+                        <p>Monday - Friday: 9:00 AM - 6:00 PM<br>
+                        Saturday: 10:00 AM - 4:00 PM<br>
+                        Sunday: Closed</p>
+                    </div>
+                </div>
+                
+                <!-- Right: Google Form Embed -->
+                <div class="form-container">
+                    <h3>Send us your inquiry</h3>
+                    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdinRtFGgrChxHrUhwGDPgfST0bGNi7zOCqVgA66nsb3XvfkQ/viewform?usp=header" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>About Zelio</h4>
+                <ul>
+                    <li><a href="#">Our Story</a></li>
+                    <li><a href="#">Leadership</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Press</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Products</h4>
+                <ul>
+                    <li><a href="#">Electric Scooters</a></li>
+                    <li><a href="#">E-Rickshaws</a></li>
+                    <li><a href="#">Specifications</a></li>
+                    <li><a href="#">Pricing</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#">Dealer Locator</a></li>
+                    <li><a href="#">Warranty</a></li>
+                    <li><a href="#">Service Centers</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Compliance</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Zelio eBikes. All rights reserved. | Sustainable Mobility for India</p>
+        </div>
+    </footer>
 </body>
 </html>
