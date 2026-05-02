@@ -217,10 +217,23 @@
             color: #22c55e;
             text-decoration: none;
             font-weight: 600;
+            transition: color 0.3s;
         }
         
         .info-item a:hover {
+            color: #16a34a;
             text-decoration: underline;
+        }
+        
+        .phone-numbers {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        
+        .location-link {
+            cursor: pointer;
+            display: inline-block;
         }
         
         /* Google Form Embed */
@@ -292,6 +305,8 @@
             text-align: center;
             color: #999;
             font-size: 14px;
+            max-width: 1200px;
+            margin: 0 auto;
         }
         
         /* Responsive Design */
@@ -416,25 +431,31 @@
                     
                     <div class="info-item">
                         <h4>📞 Phone</h4>
-                        <p>+91-XXXX-XXXX-XXX</p>
+                        <div class="phone-numbers">
+                            <a href="tel:+918126941008">+91-8126941008</a>
+                            <a href="tel:+918979583518">+91-8979583518</a>
+                        </div>
                     </div>
                     
                     <div class="info-item">
                         <h4>📧 Email</h4>
-                        <p><a href="mailto:info@zelioebikes.com">info@zelioebikes.com</a></p>
+                        <p><a href="mailto:bahubali@shrikanhajiautomotive.in">bahubali@shrikanhajiautomotive.in</a></p>
                     </div>
                     
                     <div class="info-item">
-                        <h4>🏢 Headquarters</h4>
-                        <p>Zelio eBikes Pvt. Ltd.<br>
-                        India</p>
+                        <h4>📍 Authorized Dealer Location</h4>
+                        <p><a href="https://maps.app.goo.gl/Z9DUoJkSz4pQW7rUA" target="_blank" class="location-link">Sitarganj, Uttarakhand</a></p>
                     </div>
                     
                     <div class="info-item">
                         <h4>⏰ Business Hours</h4>
-                        <p>Monday - Friday: 9:00 AM - 6:00 PM<br>
-                        Saturday: 10:00 AM - 4:00 PM<br>
-                        Sunday: Closed</p>
+                        <p>Monday: 9:00 AM - 8:00 PM<br>
+                        Tuesday: Closed<br>
+                        Wednesday: 9:00 AM - 8:00 PM<br>
+                        Thursday: 9:00 AM - 8:00 PM<br>
+                        Friday: 9:00 AM - 8:00 PM<br>
+                        Saturday: 9:00 AM - 8:00 PM<br>
+                        Sunday: 9:00 AM - 8:00 PM</p>
                     </div>
                 </div>
                 
