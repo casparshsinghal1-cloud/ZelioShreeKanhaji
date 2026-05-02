@@ -123,6 +123,37 @@
             padding: 0 20px;
         }
         
+        /* Language Toggle */
+        .language-toggle {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .lang-buttons {
+            display: inline-flex;
+            gap: 10px;
+            background: white;
+            padding: 8px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .lang-btn {
+            padding: 8px 20px;
+            border: none;
+            background: #f0f0f0;
+            color: #333;
+            cursor: pointer;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background 0.3s, color 0.3s;
+        }
+        
+        .lang-btn.active {
+            background: #22c55e;
+            color: white;
+        }
+        
         /* Features Section */
         .features {
             padding: 80px 20px;
@@ -172,6 +203,10 @@
         .feature-card p {
             color: #666;
             line-height: 1.8;
+        }
+        
+        .feature-card.hidden {
+            display: none;
         }
         
         /* Contact Section */
@@ -261,6 +296,36 @@
             border-radius: 5px;
         }
         
+        /* WhatsApp Floating Button */
+        .whatsapp-button {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            z-index: 999;
+            text-decoration: none;
+        }
+        
+        .whatsapp-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+        }
+        
+        .whatsapp-button svg {
+            width: 30px;
+            height: 30px;
+            filter: brightness(0) invert(1);
+        }
+        
         /* Footer */
         footer {
             background: #1a1a1a;
@@ -345,6 +410,13 @@
             .section-title {
                 font-size: 28px;
             }
+            
+            .whatsapp-button {
+                bottom: 20px;
+                left: 20px;
+                width: 55px;
+                height: 55px;
+            }
         }
         
         /* Animations */
@@ -366,6 +438,11 @@
         .feature-card:nth-child(1) { animation-delay: 0.1s; }
         .feature-card:nth-child(2) { animation-delay: 0.2s; }
         .feature-card:nth-child(3) { animation-delay: 0.3s; }
+        .feature-card:nth-child(4) { animation-delay: 0.4s; }
+        .feature-card:nth-child(5) { animation-delay: 0.5s; }
+        .feature-card:nth-child(6) { animation-delay: 0.6s; }
+        .feature-card:nth-child(7) { animation-delay: 0.7s; }
+        .feature-card:nth-child(8) { animation-delay: 0.8s; }
     </style>
 </head>
 <body>
@@ -393,37 +470,105 @@
     <!-- Features Section -->
     <section class="features" id="features">
         <div class="container">
-            <h2 class="section-title">Why Choose Us?</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">⚡</div>
-                    <h3>Quality Electric Scooters</h3>
-                    <p>Premium quality electric scooters and EV scooters with advanced technology for optimal performance.</p>
+            <!-- Language Toggle -->
+            <div class="language-toggle">
+                <div class="lang-buttons">
+                    <button class="lang-btn active" onclick="switchLanguage('en')">English</button>
+                    <button class="lang-btn" onclick="switchLanguage('hi')">हिंदी</button>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🌍</div>
-                    <h3>Eco-Friendly Solutions</h3>
-                    <p>Zero emissions and sustainable transportation for a cleaner, petrol-free future.</p>
+            </div>
+            
+            <!-- English Section -->
+            <div id="english-content">
+                <h2 class="section-title">Why Choose Us?</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🔧</div>
+                        <h3>Two Free Services</h3>
+                        <p>Get two complimentary service sessions in your first 2 months to keep your scooter in perfect condition.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">⚡</div>
+                        <h3>Unlimited Free Charging</h3>
+                        <p>Enjoy unlimited free charging at our facility - charge your e-scooter anytime without any cost.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🅿️</div>
+                        <h3>Unlimited Free Parking</h3>
+                        <p>Park your electric scooter at our premises completely free and worry-free parking space available.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📦</div>
+                        <h3>Spare Parts Availability</h3>
+                        <p>All genuine spare parts and accessories available in stock for quick replacements and repairs.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🏷️</div>
+                        <h3>5% Discount on Parts</h3>
+                        <p>Get 5% discount on all spare parts purchases - authentic parts at affordable prices.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🛠️</div>
+                        <h3>Free Service Camps</h3>
+                        <p>Zelio company conducts free service camps periodically - complimentary maintenance for our customers.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🎁</div>
+                        <h3>Lucky Draw Offers</h3>
+                        <p>Win exciting prizes through Zelio's attractive lucky draws - special offers for valued customers.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🌍</div>
+                        <h3>Quality Electric Scooters</h3>
+                        <p>Premium quality electric scooters with advanced technology for optimal performance and efficiency.</p>
+                    </div>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🔧</div>
-                    <h3>Complete Service & Support</h3>
-                    <p>Professional service center with battery replacement, charger repair, and spare parts availability.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🔋</div>
-                    <h3>Battery & Charger Solutions</h3>
-                    <p>Genuine electric scooter batteries and fast chargers for all EV scooter models near you.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">📦</div>
-                    <h3>Original Spare Parts</h3>
-                    <p>Authentic spare parts and accessories for all electric scooter brands and models.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">📍</div>
-                    <h3>Located in Sitarganj</h3>
-                    <p>Conveniently located in Sitarganj, Uttarakhand. Your nearest electric scooter dealer.</p>
+            </div>
+            
+            <!-- Hindi Section -->
+            <div id="hindi-content" class="hidden">
+                <h2 class="section-title">हमें क्यों चुनें?</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🔧</div>
+                        <h3>दो मुफ्त सेवाएं</h3>
+                        <p>पहले 2 महीनों में दो निःशुल्क सेवा सत्र प्राप्त करें और अपने स्कूटर को बेहतर स्थिति में रखें।</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">⚡</div>
+                        <h3>अनलिमिटेड फ्री चार्जिंग</h3>
+                        <p>हमारी सुविधा में असीमित मुफ्त चार्जिंग का आनंद लें - कभी भी बिना किसी खर्च के चार्ज करें।</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🅿️</div>
+                        <h3>अनलिमिटेड फ्री पार्किंग</h3>
+                        <p>हमारे परिसर में अपने इलेक्ट्रिक स्कूटर को पूरी तरह मुफ्त में पार्क करें - निःशुल्क पार्किंग स्थान।</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📦</div>
+                        <h3>स्पेयर पार्ट्स की उपलब्धता</h3>
+                        <p>सभी असली स्पेयर पार्ट्स और एक्सेसरीज स्टॉक में उपलब्ध - तेजी से प्रतिस्थापन के लिए।</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🏷️</div>
+                        <h3>पार्ट्स पर 5% डिस्काउंट</h3>
+                        <p>सभी स्पेय�� पार्ट्स खरीद पर 5% छूट प्राप्त करें - असली पार्ट्स सस्ती कीमतों पर।</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🛠️</div>
+                        <h3>फ्री सर्विस कैंप</h3>
+                        <p>ज़ीलियो कंपनी समय-समय पर मुफ्त सेवा शिविर आयोजित करती है - हमारे ग्राहकों के लिए।</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🎁</div>
+                        <h3>आकर्षक लकी ड्रा</h3>
+                        <p>ज़ीलियो के आकर्षक लकी ड्रा के माध्यम से रोमांचक पुरस्कार जीतें - मूल्यवान ग्राहकों के लिए।</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🌍</div>
+                        <h3>गुणवत्ता वाली ई-स्कूटर</h3>
+                        <p>उन्नत तकनीक के साथ प्रीमियम गुणवत्ता की इलेक्ट्रिक स्कूटर - बेहतर प्रदर्शन के लिए।</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -522,9 +667,37 @@
         </div>
     </footer>
 
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/918126941008?text=Hello%20Shri%20Kanhaji%20Automotives" class="whatsapp-button" target="_blank" title="Chat with us on WhatsApp">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.272-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004a9.87 9.87 0 00-4.868 1.272c-1.531.821-2.956 2.08-3.99 3.506C2.304 13.987 2 15.5 2 17.07c0 2.863.875 5.375 2.625 7.451-1.289 2.773-3.22 5.25-5.715 7.378.446-.148 1.050-.422 1.674-.797 1.283-.744 2.326-1.57 3.465-2.696 1.07.461 2.285.714 3.661.714 2.863 0 5.375-.875 7.451-2.625 2.076-1.75 3.501-4.172 3.501-6.878 0-2.706-.875-5.178-2.625-7.254-1.75-2.076-4.172-3.501-6.878-3.501"/>
+        </svg>
+    </a>
+
     <!-- SEO Keywords Hidden Section -->
     <div class="seo-tags">
         <p>Best electric scooter in Sitarganj, Best electric scooty showroom Sitarganj, Best EV scooter dealer in Sitarganj, Best electric scooter near Sitarganj Uttarakhand, Best electric scooter battery in sitarganj, Best battery operated scooter near me, Best electric scooty charger near me, Best electric scooty spare parts near me, Electric scooter sales Sitarganj, EV scooter service Sitarganj, Electric scooter battery replacement, Electric scooter charger repair, Original spare parts dealer, Authorized electric scooter dealer</p>
     </div>
+
+    <script>
+        function switchLanguage(lang) {
+            const englishContent = document.getElementById('english-content');
+            const hindiContent = document.getElementById('hindi-content');
+            const langBtns = document.querySelectorAll('.lang-btn');
+            
+            // Remove active class from all buttons
+            langBtns.forEach(btn => btn.classList.remove('active'));
+            
+            if (lang === 'en') {
+                englishContent.classList.remove('hidden');
+                hindiContent.classList.add('hidden');
+                langBtns[0].classList.add('active');
+            } else if (lang === 'hi') {
+                englishContent.classList.add('hidden');
+                hindiContent.classList.remove('hidden');
+                langBtns[1].classList.add('active');
+            }
+        }
+    </script>
 </body>
 </html>
