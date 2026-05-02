@@ -139,19 +139,25 @@
         }
         
         .lang-btn {
-            padding: 8px 20px;
-            border: none;
-            background: #f0f0f0;
+            padding: 10px 24px;
+            border: 2px solid #ddd;
+            background: white;
             color: #333;
             cursor: pointer;
             border-radius: 5px;
             font-weight: 600;
-            transition: background 0.3s, color 0.3s;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+        
+        .lang-btn:hover {
+            border-color: #22c55e;
         }
         
         .lang-btn.active {
             background: #22c55e;
             color: white;
+            border-color: #22c55e;
         }
         
         /* Features Section */
@@ -182,11 +188,20 @@
             text-align: center;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
             transition: transform 0.3s, box-shadow 0.3s;
+            opacity: 1;
+            visibility: visible;
+            transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s, box-shadow 0.3s;
         }
         
         .feature-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+        }
+        
+        .feature-card.hidden {
+            display: none;
+            opacity: 0;
+            visibility: hidden;
         }
         
         .feature-icon {
@@ -203,10 +218,6 @@
         .feature-card p {
             color: #666;
             line-height: 1.8;
-        }
-        
-        .feature-card.hidden {
-            display: none;
         }
         
         /* Contact Section */
@@ -301,18 +312,22 @@
             position: fixed;
             bottom: 30px;
             left: 30px;
-            width: 60px;
-            height: 60px;
             background: #25D366;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+            border: none;
+            border-radius: 50px;
+            padding: 15px 25px;
+            color: white;
+            font-weight: 600;
+            font-size: 14px;
             cursor: pointer;
-            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+            transition: all 0.3s ease;
             z-index: 999;
             text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            white-space: nowrap;
         }
         
         .whatsapp-button:hover {
@@ -321,9 +336,8 @@
         }
         
         .whatsapp-button svg {
-            width: 30px;
-            height: 30px;
-            filter: brightness(0) invert(1);
+            width: 24px;
+            height: 24px;
         }
         
         /* Footer */
@@ -414,8 +428,13 @@
             .whatsapp-button {
                 bottom: 20px;
                 left: 20px;
-                width: 55px;
-                height: 55px;
+                padding: 12px 20px;
+                font-size: 13px;
+            }
+            
+            .whatsapp-button svg {
+                width: 20px;
+                height: 20px;
             }
         }
         
@@ -473,15 +492,15 @@
             <!-- Language Toggle -->
             <div class="language-toggle">
                 <div class="lang-buttons">
-                    <button class="lang-btn active" onclick="switchLanguage('en')">English</button>
-                    <button class="lang-btn" onclick="switchLanguage('hi')">हिंदी</button>
+                    <button class="lang-btn active" id="en-btn" onclick="switchLanguage('en')">English</button>
+                    <button class="lang-btn" id="hi-btn" onclick="switchLanguage('hi')">हिंदी</button>
                 </div>
             </div>
             
             <!-- English Section -->
-            <div id="english-content">
+            <div id="english-section">
                 <h2 class="section-title">Why Choose Us?</h2>
-                <div class="features-grid">
+                <div class="features-grid" id="english-grid">
                     <div class="feature-card">
                         <div class="feature-icon">🔧</div>
                         <h3>Two Free Services</h3>
@@ -526,9 +545,9 @@
             </div>
             
             <!-- Hindi Section -->
-            <div id="hindi-content" class="hidden">
+            <div id="hindi-section" style="display: none;">
                 <h2 class="section-title">हमें क्यों चुनें?</h2>
-                <div class="features-grid">
+                <div class="features-grid" id="hindi-grid">
                     <div class="feature-card">
                         <div class="feature-icon">🔧</div>
                         <h3>दो मुफ्त सेवाएं</h3>
@@ -552,7 +571,7 @@
                     <div class="feature-card">
                         <div class="feature-icon">🏷️</div>
                         <h3>पार्ट्स पर 5% डिस्काउंट</h3>
-                        <p>सभी स्पेय�� पार्ट्स खरीद पर 5% छूट प्राप्त करें - असली पार्ट्स सस्ती कीमतों पर।</p>
+                        <p>सभी स्पेयर पार्ट्स खरीद पर 5% छूट प्राप्त करें - असली पार्ट्स सस्ती कीमतों पर।</p>
                     </div>
                     <div class="feature-card">
                         <div class="feature-icon">🛠️</div>
@@ -668,10 +687,11 @@
     </footer>
 
     <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/918126941008?text=Hello%20Shri%20Kanhaji%20Automotives" class="whatsapp-button" target="_blank" title="Chat with us on WhatsApp">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.272-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004a9.87 9.87 0 00-4.868 1.272c-1.531.821-2.956 2.08-3.99 3.506C2.304 13.987 2 15.5 2 17.07c0 2.863.875 5.375 2.625 7.451-1.289 2.773-3.22 5.25-5.715 7.378.446-.148 1.050-.422 1.674-.797 1.283-.744 2.326-1.57 3.465-2.696 1.07.461 2.285.714 3.661.714 2.863 0 5.375-.875 7.451-2.625 2.076-1.75 3.501-4.172 3.501-6.878 0-2.706-.875-5.178-2.625-7.254-1.75-2.076-4.172-3.501-6.878-3.501"/>
+    <a href="https://wa.me/message/LJGN6RR73ANDD1" class="whatsapp-button" target="_blank" title="Chat with us on WhatsApp">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="white">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.272-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004a9.87 9.87 0 00-4.868 1.272c-1.531.821-2.956 2.08-3.99 3.506C2.304 13.987 2 15.5 2 17.07c0 2.863.875 5.375 2.625 7.451-1.289 2.773-3.22 5.25-5.715 7.378.446-.148 1.05-.422 1.674-.797 1.283-.744 2.326-1.57 3.465-2.696 1.07.461 2.285.714 3.661.714 2.863 0 5.375-.875 7.451-2.625 2.076-1.75 3.501-4.172 3.501-6.878 0-2.706-.875-5.178-2.625-7.254-1.75-2.076-4.172-3.501-6.878-3.501"/>
         </svg>
+        Chat With Us
     </a>
 
     <!-- SEO Keywords Hidden Section -->
@@ -681,21 +701,21 @@
 
     <script>
         function switchLanguage(lang) {
-            const englishContent = document.getElementById('english-content');
-            const hindiContent = document.getElementById('hindi-content');
-            const langBtns = document.querySelectorAll('.lang-btn');
-            
-            // Remove active class from all buttons
-            langBtns.forEach(btn => btn.classList.remove('active'));
+            const englishSection = document.getElementById('english-section');
+            const hindiSection = document.getElementById('hindi-section');
+            const enBtn = document.getElementById('en-btn');
+            const hiBtn = document.getElementById('hi-btn');
             
             if (lang === 'en') {
-                englishContent.classList.remove('hidden');
-                hindiContent.classList.add('hidden');
-                langBtns[0].classList.add('active');
+                englishSection.style.display = 'block';
+                hindiSection.style.display = 'none';
+                enBtn.classList.add('active');
+                hiBtn.classList.remove('active');
             } else if (lang === 'hi') {
-                englishContent.classList.add('hidden');
-                hindiContent.classList.remove('hidden');
-                langBtns[1].classList.add('active');
+                englishSection.style.display = 'none';
+                hindiSection.style.display = 'block';
+                hiBtn.classList.add('active');
+                enBtn.classList.remove('active');
             }
         }
     </script>
