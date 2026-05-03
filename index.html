@@ -1,125 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Shri Kanhaji Automotives - Best Electric Scooter in Sitarganj, Uttarakhand</title>
-  <meta name="description" content="Best electric scooter dealer in Sitarganj, Uttarakhand. We provide electric scooty sales, service, batteries, chargers, spare parts, and maintenance support. Visit us today!">
-  <meta name="keywords" content="best electric scooter in Sitarganj, EV scooter dealer Sitarganj, electric scooty showroom, battery operated scooter near me, electric scooter battery Sitarganj, electric scooty charger, spare parts">
+  <meta name="description" content="Best electric scooter dealer in Sitarganj, Uttarakhand. We provide electric scooty sales, service, batteries, chargers, spare parts, and maintenance support. Visit us today!" />
+  <meta name="keywords" content="best electric scooter in Sitarganj, EV scooter dealer Sitarganj, electric scooty showroom, battery operated scooter near me, electric scooter battery Sitarganj, electric scooty charger, spare parts" />
 
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Segoe UI','Helvetica Neue',sans-serif; color:#333; line-height:1.6; }
+    /* Reset & base */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html,body { height: 100%; }
+    body { font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif; color:#222; line-height:1.6; background: #ffffff; }
 
-    /* Navigation */
+    /* NAV */
     nav {
       background: white;
       padding: 14px 0;
       box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-      position: sticky; top: 0; z-index: 100;
+      position: sticky;
+      top: 0;
+      z-index: 110;
     }
     .nav-container {
-      max-width: 1200px; margin: 0 auto; padding: 0 20px;
-      display: flex; justify-content: space-between; align-items: center;
+      max-width:1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 20px;
     }
 
-    /* logo now uses an image */
     .logo { display:flex; align-items:center; gap:12px; text-decoration:none; }
-    #site-logo { height:48px; width:auto; display:block; }
+    /* Use logo.jpg at repo root (index.html same folder) */
+    #site-logo { height:56px; width:auto; display:block; }
 
-    .nav-links { display:flex; gap:28px; list-style:none; }
-    .nav-links a { text-decoration:none; color:#666; font-weight:500; transition:color .25s; }
+    .nav-links { display:flex; gap:24px; list-style:none; margin-left:auto; }
+    .nav-links a { color:#555; text-decoration:none; font-weight:600; transition: color .2s; }
     .nav-links a:hover { color:#22c55e; }
 
-    /* Hero */
-    .hero { background: linear-gradient(135deg,#1a4d2e 0%,#2d7a3e 100%); color:white; padding: 80px 20px; text-align:center; }
+    /* HERO */
+    .hero {
+      background: linear-gradient(135deg,#1a4d2e 0%,#2d7a3e 100%);
+      color:#fff;
+      padding: 72px 20px;
+      text-align:center;
+    }
     .hero-content { max-width:900px; margin:0 auto; }
-    .hero h1 { font-size:40px; margin-bottom:16px; font-weight:700; }
-    .hero p { font-size:16px; margin-bottom:22px; opacity:.95; line-height:1.8; text-align:justify; }
-    .cta-button { display:inline-block; background:#22c55e; color:white; padding:12px 30px; border-radius:6px; text-decoration:none; font-weight:600; transition:all .25s; }
-    .cta-button:hover { background:#16a34a; transform:translateY(-3px); }
+    .hero h1 { font-size:40px; margin-bottom:12px; font-weight:700; }
+    .hero p { font-size:16px; margin-bottom:20px; opacity:.95; line-height:1.8; text-align:justify; max-width:900px; margin-left:auto; margin-right:auto; }
+    .cta-button { background:#22c55e; color:white; padding:12px 28px; border-radius:8px; text-decoration:none; font-weight:700; display:inline-block; transition: transform .18s, background .18s; }
+    .cta-button:hover { transform: translateY(-3px); background:#16a34a; }
 
-    /* Main container */
-    .container { max-width:1200px; margin:0 auto; padding:0 20px; }
+    /* Layout container */
+    .container { max-width:1200px; margin:0 auto; padding: 36px 20px; }
 
     /* Language toggle */
     .language-toggle { text-align:center; margin-bottom:28px; }
-    .lang-buttons { display:inline-flex; gap:10px; background:white; padding:6px; border-radius:8px; box-shadow:0 2px 10px rgba(0,0,0,.08); }
+    .lang-buttons { display:inline-flex; gap:8px; background:white; padding:6px; border-radius:10px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
     .lang-btn {
-      padding:10px 20px; border:2px solid #eee; background:white; color:#333; cursor:pointer;
-      border-radius:6px; font-weight:600; font-size:14px; transition:all .2s;
+      padding:10px 20px; border-radius:8px; border:2px solid transparent; background:transparent; cursor:pointer; font-weight:700;
+      transition: all .18s;
     }
-    .lang-btn:hover { border-color:#22c55e; }
-    .lang-btn.active { background:#22c55e; color:#fff; border-color:#22c55e; }
+    .lang-btn.active { background:#22c55e; color:white; border-color:#1f8f46; }
 
     /* Features */
-    .features { padding:60px 20px; background:#f9fafb; }
-    .section-title { text-align:center; font-size:32px; margin-bottom:36px; color:#111; font-weight:700; }
-    .features-grid { display:grid; grid-template-columns: repeat(auto-fit,minmax(240px,1fr)); gap:24px; }
+    .features { padding:48px 20px 36px 20px; background:#f9fafb; }
+    .section-title { text-align:center; font-size:30px; margin-bottom:26px; color:#0f172a; font-weight:800; }
+    .features-grid { display:grid; gap:20px; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); align-items:start; }
 
     .feature-card {
-      background:white; padding:28px; border-radius:10px; text-align:center;
-      box-shadow:0 6px 18px rgba(0,0,0,0.06); transition:transform .25s, box-shadow .25s;
+      background:white; border-radius:12px; padding:22px; text-align:center;
+      box-shadow: 0 8px 22px rgba(2,6,23,0.06); transition: transform .2s, box-shadow .2s;
     }
-    .feature-card:hover { transform:translateY(-6px); box-shadow:0 10px 30px rgba(0,0,0,0.10); }
-    .feature-icon { font-size:34px; margin-bottom:12px; }
-    .feature-card h3 { font-size:18px; margin-bottom:10px; color:#22c55e; }
-    .feature-card p { color:#555; line-height:1.6; font-size:14px; }
+    .feature-card:hover { transform: translateY(-6px); box-shadow:0 14px 36px rgba(2,6,23,0.09); }
+    .feature-icon { font-size:36px; margin-bottom:10px; }
+    .feature-card h3 { font-size:18px; margin-bottom:8px; color:#16a34a; }
+    .feature-card p { font-size:14px; color:#334155; line-height:1.5; }
 
     /* Contact */
-    .contact-section { padding:60px 20px; background:white; }
-    .contact-wrapper { display:grid; grid-template-columns: 1fr 1fr; gap:40px; align-items:start; }
-    .contact-info h2 { font-size:28px; margin-bottom:18px; color:#111; }
-    .info-item { margin-bottom:20px; padding-bottom:14px; border-bottom:1px solid #eee; }
-    .info-item h4 { color:#22c55e; margin-bottom:8px; font-size:15px; }
-    .info-item p, .info-item a { color:#444; font-size:14px; text-decoration:none; }
-    .phone-numbers { display:flex; flex-direction:column; gap:6px; }
+    .contact-section { padding:48px 20px; background:#fff; }
+    .contact-wrapper { display:grid; gap:36px; grid-template-columns: 1fr 1fr; align-items:start; }
+    .contact-info h2 { font-size:26px; margin-bottom:18px; color:#0b1220; }
+    .info-item { margin-bottom:18px; padding-bottom:14px; border-bottom:1px solid #eef2f6; }
+    .info-item h4 { color:#16a34a; margin-bottom:8px; font-size:15px; }
+    .info-item p, .info-item a { color:#39414a; font-size:14px; text-decoration:none; }
+    .phone-numbers { display:flex; flex-direction:column; gap:8px; }
 
-    .form-container { background:#f9fafb; padding:20px; border-radius:10px; box-shadow:0 6px 18px rgba(0,0,0,0.06); }
-    .form-container iframe { width:100%; height:680px; border:none; border-radius:6px; }
+    .form-container { background:#f8fafb; padding:18px; border-radius:10px; box-shadow:0 8px 18px rgba(2,6,23,0.04); }
+    .form-container h3 { margin-bottom:12px; color:#0b1220; }
+    .form-container iframe { width:100%; height:700px; border:0; border-radius:6px; }
 
-    /* WhatsApp floating button */
-    .whatsapp-button {
-      position:fixed; bottom:28px; left:28px; background:#25D366; color:white; border-radius:999px;
-      padding:12px 18px; display:flex; gap:10px; align-items:center; z-index:999; text-decoration:none;
-      box-shadow:0 6px 18px rgba(37,211,102,0.28); font-weight:700; font-size:14px;
+    /* FAQ */
+    .faq-section { padding:40px 20px; background:#fff; }
+    .faq-grid { max-width:1000px; margin:0 auto; display:grid; gap:12px; }
+    .faq-item { background:#f8fafb; border-radius:10px; overflow:hidden; box-shadow:0 6px 18px rgba(2,6,23,0.04); }
+    .faq-question {
+      width:100%; text-align:left; padding:16px 20px; background:transparent; border:0; font-weight:800; font-size:15px; cursor:pointer;
+      display:flex; align-items:center; justify-content:space-between; color:#07122a;
     }
-    .whatsapp-button:hover { transform:scale(1.05); box-shadow:0 10px 30px rgba(37,211,102,0.36); }
+    .faq-question::after { content:'+'; color:#22c55e; font-weight:800; font-size:20px; transition:transform .18s; }
+    .faq-question[aria-expanded="true"]::after { content:'−'; }
+    .faq-answer { padding:0 20px 18px 20px; color:#334155; font-size:14px; line-height:1.6; }
+
+    /* WhatsApp button */
+    .whatsapp-button {
+      position:fixed; left:18px; bottom:18px; background:#25D366; color:#fff; border-radius:999px; display:flex;
+      gap:10px; align-items:center; padding:10px 14px; font-weight:800; text-decoration:none; z-index:999; box-shadow:0 8px 24px rgba(37,211,102,0.18);
+    }
     .whatsapp-button svg { width:20px; height:20px; fill:white; }
+    .whatsapp-button:hover { transform:translateY(-3px); box-shadow:0 12px 36px rgba(37,211,102,0.22); }
 
     /* Footer */
-    footer { background:#111; color:#ddd; padding:36px 20px; margin-top:40px; }
-    .footer-content { max-width:1200px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:20px; }
-    .footer-section h4 { color:#22c55e; margin-bottom:10px; }
-    .footer-section a { color:#ccc; text-decoration:none; display:block; margin-bottom:8px; font-size:14px; }
-    .footer-bottom { text-align:center; margin-top:18px; color:#999; font-size:13px; }
+    footer { background:#0b0f10; color:#cbd5e1; padding:36px 20px; margin-top:36px; }
+    .footer-content { max-width:1200px; margin:0 auto; display:grid; gap:20px; grid-template-columns: repeat(auto-fit,minmax(160px,1fr)); }
+    .footer-section h4 { color:#22c55e; margin-bottom:8px; font-size:15px; }
+    .footer-section a { color:#cbd5e1; display:block; margin-bottom:8px; text-decoration:none; font-size:14px; }
+    .footer-bottom { text-align:center; color:#94a3b8; font-size:13px; margin-top:12px; }
 
     /* SEO hidden */
     .seo-tags { display:none; }
 
-    /* Responsive tweaks */
-    @media (max-width: 820px) {
-      .contact-wrapper { grid-template-columns: 1fr; }
-      .hero { padding:48px 16px; }
+    /* Responsive */
+    @media (max-width: 900px) {
+      .nav-container { gap:12px; }
+      .nav-links { display:none; } /* keep nav simple on small screens */
+      .hero { padding:48px 18px; }
       .hero h1 { font-size:28px; }
-      #site-logo { height:42px; }
-      .whatsapp-button { bottom:18px; left:14px; padding:10px 14px; font-size:13px; }
-      .form-container iframe { height:560px; }
+      #site-logo { height:48px; }
+      .contact-wrapper { grid-template-columns: 1fr; }
+      .form-container iframe { height:520px; }
+      .whatsapp-button { left:12px; bottom:12px; padding:8px 12px; font-size:14px; }
+    }
+
+    @media (min-width: 901px) {
+      .nav-links { display:flex; }
     }
   </style>
 </head>
 <body>
-  <!-- NAV: logo image inserted. Upload your logo to logo.jpg and keep this path. -->
+  <!-- NAV with image named logo.jpg at repo root -->
   <nav>
     <div class="nav-container">
-      <a href="/" class="logo" aria-label="Shri Kanhaji Automotives home">
+      <a class="logo" href="/" aria-label="Shri Kanhaji Automotives home">
         <img id="site-logo" src="logo.jpg" alt="Shri Kanhaji Automotives logo">
       </a>
 
-      <ul class="nav-links" aria-label="Main navigation">
-        <li><a href="#features">Features</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="#about">About</a></li>
+      <ul class="nav-links" role="menubar" aria-label="Main navigation">
+        <li role="none"><a role="menuitem" href="#features">Features</a></li>
+        <li role="none"><a role="menuitem" href="#contact">Contact</a></li>
+        <li role="none"><a role="menuitem" href="#faq">FAQ</a></li>
       </ul>
     </div>
   </nav>
@@ -134,7 +165,7 @@
   </section>
 
   <!-- FEATURES (bilingual toggle + cards) -->
-  <section class="features" id="features">
+  <section class="features" id="features" aria-labelledby="features-title">
     <div class="container">
       <div class="language-toggle" role="tablist" aria-label="Language selector">
         <div class="lang-buttons" role="presentation">
@@ -145,7 +176,7 @@
 
       <!-- English content -->
       <div id="english-section" aria-live="polite">
-        <h2 class="section-title">Why Choose Us?</h2>
+        <h2 class="section-title" id="features-title">Why Choose Us?</h2>
         <div class="features-grid" id="english-grid">
           <div class="feature-card">
             <div class="feature-icon">🔧</div>
@@ -240,9 +271,9 @@
   </section>
 
   <!-- CONTACT -->
-  <section class="contact-section" id="contact">
+  <section class="contact-section" id="contact" aria-labelledby="contact-title">
     <div class="container">
-      <h2 class="section-title">Get in Touch</h2>
+      <h2 class="section-title" id="contact-title">Get in Touch</h2>
       <div class="contact-wrapper">
         <div class="contact-info">
           <h2>We'd Love to Hear From You</h2>
@@ -262,7 +293,7 @@
 
           <div class="info-item">
             <h4>📍 Authorized Dealer Location</h4>
-            <p><a href="https://maps.app.goo.gl/Z9DUoJkSz4pQW7rUA" target="_blank">Sitarganj, Uttarakhand</a></p>
+            <p><a href="https://maps.app.goo.gl/Z9DUoJkSz4pQW7rUA" target="_blank" rel="noopener">Sitarganj, Uttarakhand</a></p>
           </div>
 
           <div class="info-item">
@@ -277,15 +308,112 @@
           </div>
         </div>
 
-        <div class="form-container">
+        <div class="form-container" aria-label="Contact form">
           <h3>Send us your inquiry</h3>
-          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdinRtFGgrChxHrUhwGDPgfST0bGNi7zOCqVgA66nsb3XvfkQ/viewform?usp=header" title="Shri Kanhaji Automotives contact form"></iframe>
+          <iframe title="Contact form" src="https://docs.google.com/forms/d/e/1FAIpQLSdinRtFGgrChxHrUhwGDPgfST0bGNi7zOCqVgA66nsb3XvfkQ/viewform?usp=header"></iframe>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- FAQ (inserted before footer) -->
+  <section class="faq-section" id="faq" aria-labelledby="faq-title">
+    <div class="container">
+      <h2 class="section-title" id="faq-title">Frequently Asked Questions</h2>
+
+      <!-- English FAQ -->
+      <div id="english-faq">
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">1. What models are available and how can I see them?</button>
+            <div class="faq-answer" hidden><p>We stock a range of electric scooters designed for city commuting. Visit our Sitarganj showroom or contact us for current models, specifications and availability.</p></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">2. Do you offer test rides?</button>
+            <div class="faq-answer" hidden><p>Yes. Test rides are available at our showroom — please call or WhatsApp to book a slot.</p></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">3. What warranty and after‑sales service do you provide?</button>
+            <div class="faq-answer" hidden><p>Manufacturer warranty varies by model. We also provide after‑sales servicing, spare parts, and periodic free service camps — contact us for model-specific warranty details.</p></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">4. How long does charging take?</button>
+            <div class="faq-answer" hidden><p>Charging time depends on the battery and charger. Standard chargers usually take several hours; fast chargers reduce that time. We sell compatible chargers and offer on-site charging support.</p></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">5. Do you sell batteries and spare parts?</button>
+            <div class="faq-answer" hidden><p>Yes. We keep common genuine spare parts and batteries in stock and can order other items. Customers get a 5% discount on parts purchases.</p></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">6. Are financing or EMI options available?</button>
+            <div class="faq-answer" hidden><p>Financing options may be available through partnered financiers. Contact us for current offers and eligibility details.</p></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">7. How can I get service or book a repair?</button>
+            <div class="faq-answer" hidden><p>Call, WhatsApp, or submit the contact form on this site to request service. We schedule appointments and announce free service camps periodically.</p></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">8. How do I contact Shri Kanhaji Automotives?</button>
+            <div class="faq-answer" hidden><p>Call +91-8126941008 / +91-8979583518, email bahubali@shrikanhajiautomotive.in or use the WhatsApp chat and the embedded contact form on this site.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hindi FAQ -->
+      <div id="hindi-faq" style="display:none;" aria-hidden="true">
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">1. कौन-कौन से मॉडल उपलब्ध हैं और मैं उन्हें कहाँ देख सकता हूँ?</button>
+            <div class="faq-answer" hidden><p>हम शहर के उपयोग के लिए उपयुक्त कई इलेक्ट्रिक स्कूटर स्टॉक में रखते हैं। वर्तमान मॉडल तथा उपलब्धता के लिये हमारे Sitarganj शो‑रूम पर आएँ या संपर्क करें।</p></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">2. क्या टेस्ट राइड मिलती है?</button>
+            <div class="faq-answer" hidden><p>हाँ। हमारे शो‑रूम पर टेस्ट राइड उपलब्ध है — कृपया पहले कॉल या व्हाट्सऐप करके समय बुक करें।</p></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">3. वारंटी और आफ़्टर‑सेल्स सेवा क्या प्रदान करते हैं?</button>
+            <div class="faq-answer" hidden><p>वारंटी मॉडल के अनुसार भिन्न होती है। हम सर्विस, स्पेयर पार्ट्स और समय‑समय पर मुफ्त सर्विस कैंप प्रदान करते हैं — मॉडल‑विशेष जानकारी के लिए संपर्क करें।</p></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">4. चार्ज करने में कितना समय लगता है?</button>
+            <div class="faq-answer" hidden><p>चार्जिंग समय बैटरी और चार्जर पर निर्भर करता है। स्टैंडर्ड चार्जर में कई घंटे लग सकते हैं; फास्ट चार्जर कम समय लेते हैं। हम चार्जर बेचते और चार्जिंग सहायता प्रदान करते हैं।</p></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">5. क्या आप बैटरी और स्पेयर पार्ट्स बेचते हैं?</button>
+            <div class="faq-answer" hidden><p>हाँ। हम सामान्य असली स्पेयर पार्ट्स और बैटरियाँ स्टॉक में रखते हैं और अन्य आइटम ऑर्डर करवा सकते हैं। स्पेयर पार्ट्स पर 5% छूट मिलती है।</p></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">6. क्या फाइनेंसिंग/ईएमआई विकल्प उपलब्ध हैं?</button>
+            <div class="faq-answer" hidden><p>पार्टनर वित्तीय संस्थाओं के माध्यम से फाइनेंसिंग उपलब्ध हो सकती है। वर्तमान ऑफ़र और पात्रता हेतु संपर्क करें।</p></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">7. सेवा या मरम्मत कैसे बुक करें?</button>
+            <div class="faq-answer" hidden><p>हमें कॉल करें, व्हाट्सऐप करें, या इस साइट पर संपर्क फ़ॉर्म भरें। हम सर्विस अपॉइंटमेंट शेड्यूल करते हैं और फ्री सर्विस कैंप आयोजित करते हैं।</p></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">8. श्री कान्हा जी ऑटोमोटिव से कैसे संपर्क करें?</button>
+            <div class="faq-answer" hidden><p>कॉल करें +91-8126941008 / +91-8979583518, ईमेल bahubali@shrikanhajiautomotive.in या व्हाट्सऐप/कॉन्टैक्ट फॉर्म का उपयोग करें।</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
   <footer>
     <div class="footer-content">
       <div class="footer-section">
@@ -293,7 +421,7 @@
         <a href="#">Best Electric Scooter Dealer</a>
         <a href="#">EV Scooter Sales</a>
         <a href="#">Service Center</a>
-        <a href="#">Contact Us</a>
+        <a href="#contact">Contact Us</a>
       </div>
 
       <div class="footer-section">
@@ -309,7 +437,7 @@
         <a href="#">Service Centers</a>
         <a href="#">Warranty Info</a>
         <a href="#">FAQ</a>
-        <a href="#">Contact</a>
+        <a href="#contact">Contact</a>
       </div>
 
       <div class="footer-section">
@@ -317,7 +445,7 @@
         <a href="#">Sitarganj</a>
         <a href="#">Uttarakhand</a>
         <a href="#">India</a>
-        <a href="https://maps.app.goo.gl/Z9DUoJkSz4pQW7rUA" target="_blank">Get Directions</a>
+        <a href="https://maps.app.goo.gl/Z9DUoJkSz4pQW7rUA" target="_blank" rel="noopener">Get Directions</a>
       </div>
     </div>
 
@@ -326,50 +454,72 @@
     </div>
   </footer>
 
-  <!-- WhatsApp Floating Button -->
-  <a class="whatsapp-button" href="https://wa.me/message/LJGN6RR73ANDD1" target="_blank" rel="noopener" title="Chat with us on WhatsApp">
-    <!-- WhatsApp icon (SVG) -->
-    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.272-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/></svg>
+  <!-- WhatsApp Floating Button (bottom-left) -->
+  <a class="whatsapp-button" href="https://wa.me/message/LJGN6RR73ANDD1" target="_blank" rel="noopener noreferrer" title="Chat with us on WhatsApp">
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.272-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/></svg>
     Chat With Us
   </a>
 
-  <!-- SEO hidden keywords -->
+  <!-- Hidden SEO keywords -->
   <div class="seo-tags" aria-hidden="true">
     Best electric scooter in Sitarganj, Best electric scooty showroom Sitarganj, Best EV scooter dealer in Sitarganj, Best electric scooter near Sitarganj Uttarakhand, Best electric scooter battery in sitarganj, Best battery operated scooter near me, Best electric scooty charger near me, Best electric scooty spare parts near me, Electric scooter sales Sitarganj, EV scooter service Sitarganj, Electric scooter battery replacement, Electric scooter charger repair, Original spare parts dealer, Authorized electric scooter dealer
   </div>
 
   <script>
-    // language switching logic (robust)
+    // Robust language switch: toggles features content and FAQs
     function switchLanguage(lang) {
-      const eng = document.getElementById('english-section');
-      const hin = document.getElementById('hindi-section');
+      const engSection = document.getElementById('english-section');
+      const hinSection = document.getElementById('hindi-section');
+      const engFaq = document.getElementById('english-faq');
+      const hinFaq = document.getElementById('hindi-faq');
       const enBtn = document.getElementById('en-btn');
       const hiBtn = document.getElementById('hi-btn');
 
       if (lang === 'en') {
-        eng.style.display = 'block';
-        eng.setAttribute('aria-hidden', 'false');
-        hin.style.display = 'none';
-        hin.setAttribute('aria-hidden', 'true');
-        enBtn.classList.add('active');
-        enBtn.setAttribute('aria-pressed', 'true');
-        hiBtn.classList.remove('active');
-        hiBtn.setAttribute('aria-pressed', 'false');
+        if (engSection) { engSection.style.display = 'block'; engSection.setAttribute('aria-hidden','false'); }
+        if (hinSection) { hinSection.style.display = 'none'; hinSection.setAttribute('aria-hidden','true'); }
+        if (engFaq) { engFaq.style.display = 'block'; engFaq.setAttribute('aria-hidden','false'); }
+        if (hinFaq) { hinFaq.style.display = 'none'; hinFaq.setAttribute('aria-hidden','true'); }
+        enBtn.classList.add('active'); enBtn.setAttribute('aria-pressed','true');
+        hiBtn.classList.remove('active'); hiBtn.setAttribute('aria-pressed','false');
       } else {
-        eng.style.display = 'none';
-        eng.setAttribute('aria-hidden', 'true');
-        hin.style.display = 'block';
-        hin.setAttribute('aria-hidden', 'false');
-        hiBtn.classList.add('active');
-        hiBtn.setAttribute('aria-pressed', 'true');
-        enBtn.classList.remove('active');
-        enBtn.setAttribute('aria-pressed', 'false');
+        if (engSection) { engSection.style.display = 'none'; engSection.setAttribute('aria-hidden','true'); }
+        if (hinSection) { hinSection.style.display = 'block'; hinSection.setAttribute('aria-hidden','false'); }
+        if (engFaq) { engFaq.style.display = 'none'; engFaq.setAttribute('aria-hidden','true'); }
+        if (hinFaq) { hinFaq.style.display = 'block'; hinFaq.setAttribute('aria-hidden','false'); }
+        hiBtn.classList.add('active'); hiBtn.setAttribute('aria-pressed','true');
+        enBtn.classList.remove('active'); enBtn.setAttribute('aria-pressed','false');
       }
     }
 
-    // initialize default language as English
-    document.addEventListener('DOMContentLoaded', function() {
+    // FAQ accordion behaviour
+    document.addEventListener('click', function (e) {
+      const btn = e.target.closest('.faq-question');
+      if (!btn) return;
+      const grid = btn.closest('.faq-grid');
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+
+      // Close other items in same grid
+      grid.querySelectorAll('.faq-question').forEach(q => {
+        if (q !== btn) {
+          q.setAttribute('aria-expanded','false');
+          const ans = q.nextElementSibling;
+          if (ans) ans.hidden = true;
+        }
+      });
+
+      // Toggle clicked
+      btn.setAttribute('aria-expanded', String(!expanded));
+      const answer = btn.nextElementSibling;
+      if (answer) answer.hidden = expanded;
+    });
+
+    // Initialize default language & ensure FAQ closed
+    document.addEventListener('DOMContentLoaded', function () {
       switchLanguage('en');
+      // ensure all answers hidden on load
+      document.querySelectorAll('.faq-answer').forEach(a => a.hidden = true);
+      document.querySelectorAll('.faq-question').forEach(q => q.setAttribute('aria-expanded','false'));
     });
   </script>
 </body>
